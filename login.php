@@ -1,7 +1,5 @@
 <?php
-
-
-
+#TODO terminar o login, verificando o banco de dados.
 ?>
 
 

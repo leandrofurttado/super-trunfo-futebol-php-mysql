@@ -28,7 +28,7 @@ if (!empty($_POST['username']) and !empty($_POST['senha'])) {
 <html>
 
 <head>
-    <title>Tela de Cadastro</title>
+    <title>Cadastro Usuarios</title>
     <link rel="stylesheet" type="text/css" href="css/style_cadastro.css" media="screen" />
 </head>
 
