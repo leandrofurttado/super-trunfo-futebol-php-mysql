@@ -1,3 +1,11 @@
+<?php
+
+
+
+?>
+
+
+
 <html>
 
 <head>
@@ -6,8 +14,9 @@
 </head>
 
 <body>
+    <button><a href="home.php">VOLTAR</a></button>
     <h1>Login STrunfo Soccer</h1>
-    <form action="/login" method="post">
+    <form action="/login" method="POST">
         <label for="username">Usuário:</label>
         <input type="text" id="username" name="username">
         <br><br>

@@ -12,6 +12,24 @@ form {
     box-shadow: 0px 0px 10px 0px gray;
 }
 
+button {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    padding: 12px 20px;
+    font-size: 17px;
+    background-color: gray;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px black;
+    transition: all 0.3s ease-in-out;
+}
+
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 7px 4px black;
+}
+
 input[type="text"],
 input[type="password"] {
     background-color: gray;
