@@ -12,14 +12,14 @@ if (!empty($_POST['username']) and !empty($_POST['senha'])) {
     $existe_usuario = $mysqlconnect->query($query_verificandoUser);
 
     if ($existe_usuario->num_rows > 0) {
-        echo "<h1>Já existe um usuario com essas informações</h1>";
-        echo "<h1>Tente novamente com um usuario diferente!</h1>";
+        echo "<h1 class='h1_error'>Já existe um usuario com essas informações</h1>";
+        echo "<h1 class='h1classe'>Tente novamente com um usuario diferente!</h1>";
     } else {
         $query_insertuser = "INSERT INTO `usuarios` (`id`, `username`, `senha`) VALUES (NULL, '$usuario_user', '$senha_user')";
 
         $mysqlconnect->query($query_insertuser);
-        echo "<h1>Cadastrado com sucesso! Redirecionando para o LOGIN...</h1>";
-        header("Refresh: 5, url=login.php");
+        echo "<h1 class='h1_sucess'>Cadastrado com sucesso! Redirecionando para o LOGIN...</h1>";
+        header("Refresh: 3, url=login.php");
     }
 }
 

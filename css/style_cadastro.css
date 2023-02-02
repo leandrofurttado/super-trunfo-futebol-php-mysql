@@ -57,3 +57,11 @@ input[type="submit"]:hover {
     transform: translateY(-5px);
     box-shadow: 2px 7px 4px black;
 }
+
+.h1_sucess {
+    color: green;
+}
+
+.h1_error {
+    color: red;
+}
