@@ -108,3 +108,19 @@
     border-radius: 50px;
     background-image: linear-gradient(to right, yellow, rgb(255, 255, 255));
 }
+
+
+.perfil-user {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 10px solid black;
+}
+
+.perfil-user h1 {
+    margin: 0;
+    font-size: 20px;
+}

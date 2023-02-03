@@ -3,23 +3,27 @@ include 'conexao_db.php';
 
 
 if (!empty($_POST['username']) and !empty($_POST['senha'])) {
-    $usuario_user = $_POST['username'];
-    $senha_user = $_POST['senha'];
+    if ($_POST['senha'] == $_POST['confirm_password']) {
+        $usuario_user = $_POST['username'];
+        $senha_user = $_POST['senha'];
 
 
-    //VERIFICANDO SE JA EXISTE O USUARIO.
-    $query_verificandoUser = "SELECT * FROM usuarios WHERE username = '$usuario_user'";
-    $existe_usuario = $mysqlconnect->query($query_verificandoUser);
+        //VERIFICANDO SE JA EXISTE O USUARIO.
+        $query_verificandoUser = "SELECT * FROM usuarios WHERE username = '$usuario_user'";
+        $existe_usuario = $mysqlconnect->query($query_verificandoUser);
 
-    if ($existe_usuario->num_rows > 0) {
-        echo "<h1 class='h1_error'>Já existe um usuario com essas informações</h1>";
-        echo "<h1 class='h1classe'>Tente novamente com um usuario diferente!</h1>";
+        if ($existe_usuario->num_rows > 0) {
+            echo "<h1 class='h1_error'>Já existe um usuario com essas informações</h1>";
+            echo "<h1 class='h1_error'>Tente novamente com um usuario diferente!</h1>";
+        } else {
+            $query_insertuser = "INSERT INTO `usuarios` (`id`, `username`, `senha`) VALUES (NULL, '$usuario_user', '$senha_user')";
+
+            $mysqlconnect->query($query_insertuser);
+            echo "<h1 class='h1_sucess'>Cadastrado com sucesso! Redirecionando para o LOGIN...</h1>";
+            header("Refresh: 3, url=login.php");
+        }
     } else {
-        $query_insertuser = "INSERT INTO `usuarios` (`id`, `username`, `senha`) VALUES (NULL, '$usuario_user', '$senha_user')";
-
-        $mysqlconnect->query($query_insertuser);
-        echo "<h1 class='h1_sucess'>Cadastrado com sucesso! Redirecionando para o LOGIN...</h1>";
-        header("Refresh: 3, url=login.php");
+        echo "<h1 class='h1_error'>As senhas não coincidem, tente novamente...</h1>";
     }
 }
 
