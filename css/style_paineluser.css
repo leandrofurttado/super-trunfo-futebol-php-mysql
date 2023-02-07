@@ -95,12 +95,12 @@
     border-color: yellow;
 }
 
-.neymar {
-
-    width: 230px;
-    height: 210px;
-    margin-top: 14px;
-    border-radius: 10px;
+.user-padrao {
+    position: relative;
+    left: 0px;
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
 
 }
 
@@ -112,10 +112,10 @@
 
 .perfil-user {
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 0;
-    margin: 20px;
-    padding: 20px;
+    margin: 5px;
+    padding: 10px;
     background-color: white;
     border: 10px solid black;
 }
@@ -123,4 +123,28 @@
 .perfil-user h1 {
     margin: 0;
     font-size: 20px;
+}
+
+.button-edit {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.button-edit a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.button-edit:hover {
+    background-color: black;
+}
+
+.button-edit a:hover {
+    color: white;
 }
