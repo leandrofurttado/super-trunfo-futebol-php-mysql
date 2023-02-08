@@ -54,3 +54,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #555;
 }
+
+.h1-sucess {
+    display: flex;
+    justify-content: center;
+    color: green;
+}

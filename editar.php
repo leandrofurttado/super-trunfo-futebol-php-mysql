@@ -22,8 +22,20 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
             die("Tipo de arquivo não é aceito.");
         } else {
             move_uploaded_file($nova_foto["tmp_name"], $path); //envia a foto para a pasta fisica
+
+            //*****DELETANDO O ARQUIVO DA FOTO ANTIGO:************
+            $query_get_name_pathAntigo = "SELECT caminho_arquivouser FROM usuarios WHERE username = '$usuario_logado'";
+            $busca_antigoPath = $mysqlconnect->query($query_get_name_pathAntigo);
+            $linha = $busca_antigoPath->fetch_assoc();
+            $caminho_antigo = $linha['caminho_arquivouser']; //Pega o nome do caminho antigo.
+            unlink($caminho_antigo); //Deleta o arquivo da pasta com o nome do caminho cantigo.
+
+
+            //*********************//
             $query_envio_foto = "UPDATE usuarios SET nome_completo = '$novo_nome', nome_arquivouser = '$nomeDoArquivo', caminho_arquivouser = '$path' WHERE username = '$usuario_logado';";
             $mysqlconnect->query($query_envio_foto);
+            echo "<h1 class=h1-sucess> Dados alterados com sucesso! </h1>";
+            Header("refresh:2 painel_usuario.php");
         }
     }
 }
