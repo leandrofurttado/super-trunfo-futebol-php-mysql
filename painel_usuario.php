@@ -16,7 +16,8 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
     // ele está pegando o retorno da query e fazendo um fetch_assoc que lista em array as linhas da tabela, sendo assim criou uma variavel $linha com os dados 
     $linha = $creditos_usuario->fetch_assoc();
     $creditos = $linha['credits']; //aqui ele pega só a linha ''credits'' de toda a query que voltou.
-    $nome_user = $linha['nome_completo'];
+    $nome_user = $linha['nome_completo']; //aqui ele pega só a linha ''nome_completo'' do usuario de toda a query que voltou
+    $id_do_usuario = $linha['id'];
 }
 ?>
 
@@ -36,7 +37,7 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
 </head>
 
 <body>
-    <h1 class="perfil-user">Seja bem-vindo, <?php echo $nome_user ?>!</h1>
+    <h1 class="perfil-user">Seja bem-vindo, <?php echo $nome_user ?>! O seu ID: <?php echo $id_do_usuario ?></h1>
     <div class="perfil-user">
         <?php
         // *****SISTEMA PARA INSERIR FOTO NO PERFIL CASO TENHA *******
@@ -71,37 +72,47 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
     <div class="container">
 
         <?php //MOMENTO PARA ACESSAR O BANCO DE DADOS DOS JOGADORES/CARDS
-        //TODO Criar uma logica que tenha cartas por session
-        $query_verifica_jogador = "SELECT * FROM jogadores";
 
-        $resultado_pesquisa = $mysqlconnect->query($query_verifica_jogador);
+        $query_verifica_id_cartas = "SELECT c.nome_jogador, c.jogos, c.vitorias, c.gols, c.ano_nascimento, c.caminho_arquivo
+        FROM jogadores c
+        INNER JOIN usuario_cartas cu ON c.id = cu.id_carta
+        WHERE cu.id_usuario = $id_do_usuario"; //QUERY QUE IRÁ UNIR A TABELA COM CHAVES ESTRANGEIRAS JUNTAMENTE COM A TABELA DE CARTAS E NO FINAL ELA SÓ EXIBE SE O cu.id_usuario FOR IGUAL AO ID SESSION LOGADO.
+
+
+        $resultado_pesquisa = $mysqlconnect->query($query_verifica_id_cartas); //array com os ids de todas as cartas somente do usuario da session.
         ?>
 
-        <?php while ($linha = $resultado_pesquisa->fetch_array()) { // o While começa aqui e termina lá em baixo com uma abertura de codigo php apenas para fechar a chaves
+        <?php
+
+        if ($resultado_pesquisa->num_rows > 0) {
+            while ($linha = $resultado_pesquisa->fetch_assoc()) { // o While começa aqui e termina lá em baixo com uma abertura de codigo php apenas para fechar a chaves
         ?>
-            <div class="card">
-                <div class="imagem">
-                    <img class="imagem-edit" src="<?php echo $linha['caminho_arquivo'] ?>" alt="">
+                <div class="card">
+                    <div class="imagem">
+                        <img class="imagem-edit" src="<?php echo $linha['caminho_arquivo'] ?>" alt="">
+                    </div>
+                    <h2 class="nome-jogador"><?php echo $linha['nome_jogador'] ?></h2>
+                    <div class="texto">
+                        <h4>⛳Jogos: <?php echo $linha['jogos'] ?></h4>
+                        <hr class="hr-func">
+                    </div>
+                    <div class="texto">
+                        <h4>🙌Vitórias: <?php echo $linha['vitorias'] ?></h4>
+                        <hr class="hr-func">
+                    </div>
+                    <div class="texto">
+                        <h4>⚽Gols marcados: <?php echo $linha['gols'] ?></h4>
+                        <hr class="hr-func">
+                    </div>
+                    <div class="texto">
+                        <h4>📅Ano nascimento: <?php echo $linha['ano_nascimento'] ?></h4>
+                        <hr class="hr-func">
+                    </div>
                 </div>
-                <h2 class="nome-jogador"><?php echo $linha['nome_jogador'] ?></h2>
-                <div class="texto">
-                    <h4>⛳Jogos: <?php echo $linha['jogos'] ?></h4>
-                    <hr class="hr-func">
-                </div>
-                <div class="texto">
-                    <h4>🙌Vitórias: <?php echo $linha['vitorias'] ?></h4>
-                    <hr class="hr-func">
-                </div>
-                <div class="texto">
-                    <h4>⚽Gols marcados: <?php echo $linha['gols'] ?></h4>
-                    <hr class="hr-func">
-                </div>
-                <div class="texto">
-                    <h4>📅Ano nascimento: <?php echo $linha['ano_nascimento'] ?></h4>
-                    <hr class="hr-func">
-                </div>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        <?php } else {
+            echo "<h1> Você não possui cartas ainda! </h1>";
+        } ?>
 
     </div>
     <div class="botao">
