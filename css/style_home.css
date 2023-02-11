@@ -1,5 +1,7 @@
 body {
-    background: linear-gradient(to right, rgb(2, 131, 19), rgb(175, 172, 1));
+    background-image: url("/imgs_background/stadium.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     font-family: Arial, sans-serif;
 }

@@ -65,7 +65,14 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
                                     echo $creditos;
                                 }
                                 ?> Points</h1>
-            <button class="button-edit"><a href="editar.php">Editar perfil</a></button>
+            <div class="container-buttons">
+                <button class="button-edit"><a href="editar.php">Editar perfil</a></button>
+                <hr>
+                <button class=button_loja><a href='loja.php'>LOJA de Cartas</a></button>
+            </div>
+            <hr>
+            <button class=button_deslogar><a href='/speedFunctions/sair_deslogar.php'>LOGOUT</a></button>
+
     </div>
 
     <h1 class="titulo">Super Trunfo Soccer</h1>
@@ -73,7 +80,7 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
 
         <?php //MOMENTO PARA ACESSAR O BANCO DE DADOS DOS JOGADORES/CARDS
 
-        $query_verifica_id_cartas = "SELECT c.nome_jogador, c.jogos, c.vitorias, c.gols, c.ano_nascimento, c.caminho_arquivo
+        $query_verifica_id_cartas = "SELECT c.id, c.nome_jogador, c.jogos, c.vitorias, c.gols, c.ano_nascimento, c.caminho_arquivo, c.valor_carta
         FROM jogadores c
         INNER JOIN usuario_cartas cu ON c.id = cu.id_carta
         WHERE cu.id_usuario = $id_do_usuario"; //QUERY QUE IRÁ UNIR A TABELA COM CHAVES ESTRANGEIRAS JUNTAMENTE COM A TABELA DE CARTAS E NO FINAL ELA SÓ EXIBE SE O cu.id_usuario FOR IGUAL AO ID SESSION LOGADO.
@@ -88,6 +95,10 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
             while ($linha = $resultado_pesquisa->fetch_assoc()) { // o While começa aqui e termina lá em baixo com uma abertura de codigo php apenas para fechar a chaves
         ?>
                 <div class="card">
+                    <div class="valor-carta-h4">
+                        <h4>💵VALOR DA CARTA: <?php echo $linha['valor_carta'] ?> Points</h4>
+                        <hr class=" hr-func">
+                    </div>
                     <div class="imagem">
                         <img class="imagem-edit" src="<?php echo $linha['caminho_arquivo'] ?>" alt="">
                     </div>
@@ -108,6 +119,7 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
                         <h4>📅Ano nascimento: <?php echo $linha['ano_nascimento'] ?></h4>
                         <hr class="hr-func">
                     </div>
+                    <button class='botao_venda'><a href='/speedFunctions/vender_carta.php?id=<?php echo $linha["id"] ?>&id_user=<?php echo $id_do_usuario ?>'>Vender carta</a></button>
                 </div>
             <?php } ?>
         <?php } else {
@@ -116,8 +128,13 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
 
     </div>
     <div class="botao">
-        <button class="botao_click"><a href="creations.php">CLIQUE PARA CRIAR MAIS CARDS</a></button>
-        <button class=button_deslogar><a href='sair_deslogar.php'>LOGOUT</a></button>
+        <?php
+        if ($usuario == "adm") {
+            echo "<button class='botao_click'><a href='creations.php'>CLIQUE PARA CRIAR MAIS CARDS</a></button>";
+        }
+        ?>
+
+
     </div>
 </body>
 

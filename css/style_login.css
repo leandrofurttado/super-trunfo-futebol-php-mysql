@@ -1,6 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-image: url("/imgs_background/stadium.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body h1 {
+    color: rgb(181, 248, 181);
+
 }
 
 form {

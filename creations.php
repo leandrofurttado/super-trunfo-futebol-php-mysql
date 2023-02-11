@@ -7,6 +7,7 @@ if (isset($_FILES['arquivo']) and isset($_POST['nome_do_jogador']) and isset($_P
     $vitorias_jogador = $_POST['vitorias_jogador'];
     $gols_jogador = $_POST['gols_jogador'];
     $nascimento_jogador = $_POST['nascimento_jogador'];
+    $valor_mercado_jogador = $_POST['valor_carta'];
 
     //diretorio arquivos
     $pasta = "files/";
@@ -20,7 +21,7 @@ if (isset($_FILES['arquivo']) and isset($_POST['nome_do_jogador']) and isset($_P
     $envio_true = move_uploaded_file($arquivo["tmp_name"], $path);
     if ($envio_true) {
         //CODIGO SQL
-        $inserir_sql = "INSERT INTO jogadores (nome_jogador, jogos, vitorias, gols, ano_nascimento, nome_arquivo, caminho_arquivo) VALUES ('$nome_jogador', '$partidas', '$vitorias_jogador', '$gols_jogador', '$nascimento_jogador', '$nomeDoArquivo', '$path')";
+        $inserir_sql = "INSERT INTO jogadores (nome_jogador, jogos, vitorias, gols, ano_nascimento, nome_arquivo, caminho_arquivo, valor_carta) VALUES ('$nome_jogador', '$partidas', '$vitorias_jogador', '$gols_jogador', '$nascimento_jogador', '$nomeDoArquivo', '$path', '$valor_carta')";
         // ENVIANDO PRO BANCO DE DADOS COM O SQL.
         $mysqlconnect->query($inserir_sql);
 
@@ -71,6 +72,9 @@ if (isset($_FILES['arquivo']) and isset($_POST['nome_do_jogador']) and isset($_P
                 <hr>
                 <label>Ano de nascimento:</label>
                 <input type="number" name="nascimento_jogador">
+                <hr>
+                <label>Valor de mercado da carta:</label>
+                <input type="number" name="valor_carta">
                 <br>
                 <hr>
                 <input type="submit" value="Enviar">
@@ -79,20 +83,20 @@ if (isset($_FILES['arquivo']) and isset($_POST['nome_do_jogador']) and isset($_P
         <form class="remove-jogador" action="creations.php" method="POST">
             <fieldset class="fieldset-color" style="width: 10%;">
                 <h2 class="h2remove">Remover carta!</h2>
-                <label>Nome do jogador:</label>
-                <input type="text" name="jogador_nome">
+                <label>ID da carta:</label>
+                <input type="number" name="id_carta_jogador">
                 <br>
                 <hr>
                 <input type="submit" value="Enviar">
                 <?php
                 //APAGAR UM JOGADOR*******
-                if (isset($_POST['jogador_nome'])) {
-                    $nome_jogador = $_POST['jogador_nome'];
-                    $consulta = "SELECT * FROM jogadores";
+                if (isset($_POST['id_carta_jogador'])) {
+                    $id_jogador = $_POST['id_carta_jogador'];
+                    $consulta = "SELECT * FROM usuario_cartas";
                     $conexao = $mysqlconnect->query($consulta) or die("Não foi possível deletar!");
 
                     if ($conexao->num_rows > 0) {
-                        $delete = "DELETE FROM jogadores WHERE nome_jogador = '$nome_jogador'";
+                        $delete = "DELETE FROM usuario_cartas WHERE id_carta = '$id_jogador'";
                         $mysqlconnect->query($delete);
                         echo "<h1 class='h1-sucess'>Jogador removido!</h1>";
                     } else {
@@ -106,7 +110,7 @@ if (isset($_FILES['arquivo']) and isset($_POST['nome_do_jogador']) and isset($_P
         </form>
     </div>
     <div class="botao">
-        <button class="botao_click"><a href="index.php">CLIQUE PARA VOLTAR AOS CARDS</a></button>
+        <button class="botao_click"><a href="painel_usuario.php">CLIQUE PARA VOLTAR AO PAINEL LOGADO</a></button>
     </div>
 </body>
 
