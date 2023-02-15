@@ -69,6 +69,8 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
                 <button class="button-edit"><a href="editar.php">Editar perfil</a></button>
                 <hr>
                 <button class=button_loja><a href='loja.php'>LOJA de Cartas</a></button>
+                <hr>
+                <button class=button-diario><a href='sorteioDia.php'>Sorte diária</a></button>
             </div>
             <hr>
             <button class=button_deslogar><a href='/speedFunctions/sair_deslogar.php'>LOGOUT</a></button>

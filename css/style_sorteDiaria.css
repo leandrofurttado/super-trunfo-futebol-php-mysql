@@ -4,6 +4,8 @@ body {
     background-image: url("/imgs_background/back-loja.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
 }
 
 body h1 {
@@ -57,6 +59,18 @@ body h1 {
     background-color: rgb(181, 192, 183);
     margin: 40px;
     transition: all 0.5s ease-in-out;
+    transform: scale(0);
+    animation: entrada 20s forwards;
+}
+
+@keyframes entrada {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
 }
 
 .card:hover {
@@ -116,28 +130,4 @@ body h1 {
     bottom: 10px;
     border-radius: 50px;
     background-image: linear-gradient(to right, rgb(17, 40, 253), rgb(255, 255, 255));
-}
-
-.btn-comprar {
-    position: relative;
-    top: 20px;
-    background-color: #0a0ef7;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-comprar:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 10px #888888;
-    background-color: green;
-}
-
-.btn-comprar a {
-    text-decoration: none;
-    color: white;
 }

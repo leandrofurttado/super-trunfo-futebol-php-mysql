@@ -226,11 +226,38 @@ body h1 {
 }
 
 .botao_venda a {
-    color: aqua;
+    color: black;
     text-decoration: none;
     font-size: 16px;
 }
 
 .botao_venda:hover {
     background-color: #16e91d;
+}
+
+
+
+.button-diario {
+    width: 120px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.button-diario a {
+    text-decoration: none;
+    color: rgb(0, 1, 7);
+    font-size: 18px;
+    display: block;
+}
+
+.button-diario:hover {
+    background-color: rgb(33, 19, 241);
+}
+
+.button-diario a:hover {
+    color: rgb(2, 0, 0);
 }

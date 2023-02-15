@@ -26,13 +26,18 @@ if (!$carta) {
     $mysqlconnect->query($query_removeCarta);
     /////
     ///AGORA IREMOS OBTER O VALOR ATUAL DOS CREDITS DO USUARIO E SOMAR COM O VALOR DA VENDA.
-    $query_Credits = "SELECT 'credits' FROM usuarios WHERE id = $id_usuario";
+    $query_Credits = "SELECT `credits` FROM usuarios WHERE id = $id_usuario";
     $creditos = mysqli_fetch_assoc($mysqlconnect->query($query_Credits));
-    //--- AGORA É SÓ SOMAR COM A VENDA
-    $creditos_final = intval($valor_da_carta) + intval($creditos['credits']);
-    // agora basta colocar o valor da soma na conta:
-    $query_addValor = "UPDATE usuarios SET credits = '$creditos_final' WHERE id = $id_usuario";
-    $mysqlconnect->query($query_addValor);
+    if ($creditos == null) {
+        $query_addValor = "UPDATE usuarios SET credits = '$creditos_final' WHERE id = $id_usuario";
+        $mysqlconnect->query($query_addValor);
+    } else {
+        //--- AGORA É SÓ SOMAR COM A VENDA
+        $creditos_final = intval($valor_da_carta) + intval($creditos['credits']);
+        // agora basta colocar o valor da soma na conta:
+        $query_addValor = "UPDATE usuarios SET credits = '$creditos_final' WHERE id = $id_usuario";
+        $mysqlconnect->query($query_addValor);
+    }
 
 
     echo "<h1> Creditos total: $creditos_final</h1>";
@@ -44,9 +49,26 @@ if (!$carta) {
 ?>
 
 
-<h1>Jogador: <?php echo $carta["nome_jogador"] ?> foi vendido com sucesso!
-    Cheque o dinheiro em sua conta.</h1>
-<h1>+<?php echo $carta['valor_carta'] ?> points</h1>
+<!-- MENSAGEM DE SUCESSO DA VENDA! -->
+<div class="message-container">
+    <style>
+        .message-container {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #ccc;
+            width: 500px;
+            height: 200px;
+            margin: 50px auto;
+            text-align: center;
+        }
 
-<!-- Formulário de venda aqui -->
-<!-- ... -->
+        h1 {
+            font-size: 24px;
+            margin-top: 50px;
+            color: #333;
+        }
+    </style>
+    <h1>Jogador: <?php echo $carta["nome_jogador"] ?> foi vendido com sucesso! Cheque o dinheiro em sua conta.</h1>
+    <h1>+<?php echo $carta['valor_carta'] ?> points</h1>
+</div>
