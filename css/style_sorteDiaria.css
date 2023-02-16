@@ -79,6 +79,28 @@ body h1 {
     background-color: green;
 }
 
+.button-back {
+    background-color: #2617fa;
+    color: rgb(209, 243, 17);
+    padding: 12px 20px;
+    position: relative;
+    top: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-back a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.button-back:hover {
+    background-color: #16e91d;
+}
+
 .nome-jogador {
     display: flex;
     justify-content: center;

@@ -22,7 +22,7 @@ if (isset($_SESSION['username']) == true and isset($_SESSION['senha']) == true) 
 <body>
     <?php
     if ($usuario != '') {
-        echo "<h1>Bem-vindo ao Super Trunfo $usuario!<button class=button_deslogar><a href='sair_deslogar.php'>SAIR</a></button></h1>";
+        echo "<h1>Bem-vindo ao Super Trunfo $usuario!<button class=button_deslogar><a href='./speedFunctions/sair_deslogar.php'>SAIR</a></button></h1>";
     } else {
         echo "<h1>Bem-vindo ao Super Trunfo! Faça login para obter cartas!</h1>";
     }

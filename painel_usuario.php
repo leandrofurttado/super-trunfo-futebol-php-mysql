@@ -70,7 +70,7 @@ if (!isset($_SESSION['username']) == true and !isset($_SESSION['senha']) == true
                 <hr>
                 <button class=button_loja><a href='loja.php'>LOJA de Cartas</a></button>
                 <hr>
-                <button class=button-diario><a href='sorteioDia.php'>Sorte diária</a></button>
+                <button class=button-diario><a href='sorteDiaria.php?id_user=<?php echo $id_do_usuario ?>'>Sorte diária</a></button>
             </div>
             <hr>
             <button class=button_deslogar><a href='/speedFunctions/sair_deslogar.php'>LOGOUT</a></button>

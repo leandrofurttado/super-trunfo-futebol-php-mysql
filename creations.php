@@ -21,7 +21,7 @@ if (isset($_FILES['arquivo']) and isset($_POST['nome_do_jogador']) and isset($_P
     $envio_true = move_uploaded_file($arquivo["tmp_name"], $path);
     if ($envio_true) {
         //CODIGO SQL
-        $inserir_sql = "INSERT INTO jogadores (nome_jogador, jogos, vitorias, gols, ano_nascimento, nome_arquivo, caminho_arquivo, valor_carta) VALUES ('$nome_jogador', '$partidas', '$vitorias_jogador', '$gols_jogador', '$nascimento_jogador', '$nomeDoArquivo', '$path', '$valor_carta')";
+        $inserir_sql = "INSERT INTO jogadores (nome_jogador, jogos, vitorias, gols, ano_nascimento, nome_arquivo, caminho_arquivo, valor_carta) VALUES ('$nome_jogador', '$partidas', '$vitorias_jogador', '$gols_jogador', '$nascimento_jogador', '$nomeDoArquivo', '$path', '$valor_mercado_jogador')";
         // ENVIANDO PRO BANCO DE DADOS COM O SQL.
         $mysqlconnect->query($inserir_sql);
 
