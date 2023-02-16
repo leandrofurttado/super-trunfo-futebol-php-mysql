@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url("/imgs_background/stadium.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body h1 {
+    color: rgb(181, 248, 181);
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px gray;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    padding: 12px 20px;
+    font-size: 17px;
+    background-color: gray;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px black;
+    transition: all 0.3s ease-in-out;
+}
+
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 7px 4px black;
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: gray;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="submit"] {
+    position: relative;
+    left: 180px;
+    margin-left: 10px;
+    margin-top: 50px;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: darkblue;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px black;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 7px 4px black;
+}
+
+.h1_sucess {
+    color: green;
+}
+
+.h1_error {
+    color: red;
+}

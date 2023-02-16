@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url("/imgs_background/back-loja.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body h1 {
+    color: rgb(23, 75, 245);
+    text-shadow: 3px 3px 1px rgb(0, 0, 0);
+    box-shadow: 0px 3px black;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1024px;
+    margin: auto;
+    transition: 2s;
+}
+
+.remove-jogador {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.fieldset-color {
+    background-color: aqua;
+
+}
+
+
+.h1-centralizer {
+    display: flex;
+    justify-content: center;
+}
+
+.botao_click {
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: aqua;
+}
+
+.card {
+    width: 250px;
+    height: 460px;
+    border-radius: 15px;
+    background-color: rgb(181, 192, 183);
+    margin: 40px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px #888888;
+    background-color: green;
+}
+
+.nome-jogador {
+    display: flex;
+    justify-content: center;
+    margin: -30px;
+    bottom: 20px;
+    padding: -20px;
+    font-size: 30px;
+    color: rgb(255, 251, 2);
+    text-shadow: 0px 5px 5px black;
+    transition: 1s;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+}
+
+.hr-func {
+    margin-top: -22px;
+    border-color: rgb(19, 79, 243);
+}
+
+.imagem-edit {
+
+    width: 240px;
+    height: 250px;
+    border-radius: 10px;
+
+}
+
+.user-padrao {
+    position: relative;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    border-radius: 13px;
+    margin: 20px;
+}
+
+.texto {
+    margin-top: 30px;
+    margin-bottom: -20px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, rgb(11, 46, 248), rgb(255, 255, 255));
+}
+
+.valor-carta-h4 {
+    position: relative;
+    bottom: 10px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, rgb(17, 40, 253), rgb(255, 255, 255));
+}
+
+.btn-comprar {
+    position: relative;
+    top: 20px;
+    background-color: #0a0ef7;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px #888888;
+    background-color: green;
+}
+
+.btn-comprar a {
+    text-decoration: none;
+    color: white;
+}

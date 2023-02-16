@@ -1,0 +1,263 @@
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url("/imgs_background/stadium.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body h1 {
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 4px rgb(157, 255, 0);
+
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    margin: auto;
+    transition: 2s;
+}
+
+.remove-jogador {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.fieldset-color {
+    background-color: aqua;
+
+}
+
+
+.h1-centralizer {
+    display: flex;
+    justify-content: center;
+}
+
+.botao_click {
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: aqua;
+}
+
+.card {
+    width: 250px;
+    height: 460px;
+    border-radius: 10px;
+    background-color: rgb(181, 192, 183);
+    margin: 10px;
+}
+
+.nome-jogador {
+    display: flex;
+    justify-content: center;
+    margin: -30px;
+    bottom: 20px;
+    padding: -20px;
+    font-size: 30px;
+    color: rgb(255, 251, 2);
+    text-shadow: 0px 5px 5px black;
+    transition: 1s;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+}
+
+.hr-func {
+    margin-top: -22px;
+    border-color: yellow;
+}
+
+.imagem-edit {
+
+    width: 240px;
+    height: 250px;
+    border-radius: 10px;
+
+}
+
+.user-padrao {
+    position: relative;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    border-radius: 13px;
+    margin: 20px;
+}
+
+.texto {
+    margin-top: 30px;
+    margin-bottom: -20px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, yellow, rgb(255, 255, 255));
+}
+
+.valor-carta-h4 {
+    position: relative;
+    bottom: 10px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, yellow, rgb(255, 255, 255));
+}
+
+
+
+.perfil-user {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    top: 2px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: 20px solid black;
+}
+
+.container-buttons {
+    display: flex;
+
+}
+
+.perfil-user h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.button-edit {
+    width: 120px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.button-edit a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.button-edit:hover {
+    background-color: black;
+}
+
+.button-edit a:hover {
+    color: white;
+}
+
+.button_deslogar {
+    padding: 2px 5px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.button_deslogar a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    display: block;
+}
+
+.button_deslogar:hover {
+    background-color: black;
+}
+
+.button_deslogar a:hover {
+    color: white;
+}
+
+
+.button_loja {
+    display: flex;
+    width: 120px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.button_loja a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.button_loja:hover {
+    background-color: rgb(5, 233, 35);
+}
+
+.button_loja a:hover {
+    color: rgb(19, 19, 19);
+}
+
+.botao_venda {
+    background-color: #2617fa;
+    color: rgb(209, 243, 17);
+    padding: 12px 20px;
+    position: relative;
+    top: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.botao_venda a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.botao_venda:hover {
+    background-color: #16e91d;
+}
+
+
+
+.button-diario {
+    width: 120px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.button-diario a {
+    text-decoration: none;
+    color: rgb(0, 1, 7);
+    font-size: 18px;
+    display: block;
+}
+
+.button-diario:hover {
+    background-color: rgb(33, 19, 241);
+}
+
+.button-diario a:hover {
+    color: rgb(2, 0, 0);
+}

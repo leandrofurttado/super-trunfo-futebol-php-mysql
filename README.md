@@ -1,30 +1,28 @@
-# Teste desenvolvedor JR. PHP
+# Projeto foi um Teste desenvolvedor JR. PHP
 
-Relembrando os bons tempos da nossa infância vamos desenvolver o famoso jogo de cartas super trunfo.
+Este projeto foi um teste para uma vaga/processo de Dev.JR, na qual deveriamos criar umas cartas de Super Trunfo na tela com dados armazenados no Banco de Dados. Após a entrega resolvi fazer além e criar um sistema por trás das cartas incluindo usuarios e loja.
 
-Pegando uma brecha da copa do mundo, o nosso teste será baseado em jogadores de futebol.
+## Conteúdo:
 
-Utilizando PHP, MySQL, HMLT e CSS retorne uma página que contenha uma lista dinâmica de no mínimo 5 cartas com os seguintes atributos: `Foto, Nome, Partidas Disputadas, Vitórias, Gols Marcados e Ano de Nascimento`
+-Cada usuario tem suas cartas.
+-Cadastro e Login de usuarios.
+-Cartas de jogadores de futebol, incluindo alguns resultados, *dependendo do jogador ou de seus resultados a carta tem um valor maior*.
+-Loja para vender e comprar cartas de outros usuarios. (Cada jogador tem um valor)
+-Editar perfil com foto e novo nome
+-Sorte diária (A cada 24 horas o usuario tem direito a jogar e ganhar uma nova carta.)
+-Somente o Admin pode criar e remover cartas do bd pelo proprio sistema.
 
-## Considerações:
+# Futuras atualizações por enquanto:
+-Chegada de mais cartas e de vários jogadores, por enquanto possui muito pouco.
+-Melhora no front-end e design
+-Alterações no nome da aplicação
+-Cartas lendárias onde serão animadas (.gif)
+-Opção de trocas de carta entre usuarios
+-Visitar um perfil de um usuario
 
-- Crie uma tabela no banco de dados chamada `jogadores` e adicione nessa tabela as seguintes colunas `Foto, Nome, Partidas Disputadas, Vitórias, Gols Marcados e Ano de Nascimento`;
-- Crie um arquivo PHP para realizar a conexão com o banco de dados;
-- Crie uma página para cadastrar, editar e remover os jogadores;
-- Os cards deveram ser ordenados de forma crescente por: nome e ano de nascimento;
 
-# Envio do teste
+# Observações:
 
-Data de entrega 13/01/2023 até as 18hr.
+-A ideia do projeto é apenas praticar a linguagem PHP, ainda estou longe de ter um bom conhecimento na linguagem e por isso pode apresentar algumas falhas no sistema ou um código confuso e de dificil manutenção.
 
-Ao finalizar, deve ser feito um PR (pull request) para este repositório contendo o seu nome e suas modificações para que seja feita a avaliação. Não esqueça se anexar o dump da tabela criada.
-
-# Avaliação
-
-Irá ser avaliado: Seu conhecimento técnico, sua habilidade para resolver problemas de forma simples e eficiente e boas práticas de código.
-
-# Exemplo
-
-Quanto ao design fique livre para criar, no entanto todos os dados devem ser exibidos conforme é mostrado no seguinte exemplo:
-
-![alt text](https://github.com/thiagoorodrigues/teste-dev-junior/blob/master/exemple.png)
+-Arquivo SQL para importar o banco de dados está no diretorio principal.

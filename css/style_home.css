@@ -1,0 +1,47 @@
+body {
+    background-image: url("/imgs_background/stadium.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+p {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: darkblue;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px black;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 7px 4px black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.button_deslogar {
+    position: absolute;
+    background-color: red;
+    padding: 1px 5px;
+    right: 80px;
+}
