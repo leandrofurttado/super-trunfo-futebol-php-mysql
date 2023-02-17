@@ -26,3 +26,6 @@ Este projeto foi um teste para uma vaga/processo de Dev.JR, na qual deveriamos c
 -A ideia do projeto é apenas praticar a linguagem PHP, ainda estou longe de ter um bom conhecimento na linguagem e por isso pode apresentar algumas falhas no sistema ou um código confuso e de dificil manutenção.
 
 -Arquivo SQL para importar o banco de dados está no diretorio principal.
+
+#Link do site hospedado e funcionando:
+https://footcards.000webhostapp.com/
